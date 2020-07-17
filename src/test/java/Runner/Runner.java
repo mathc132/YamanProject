@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 				 features = {"src/test/java/features/"},
 				 plugin = {"pretty", "html:target/cucumber"},
-				 tags = {"@teste2"},
+				 tags = {"@geral"},
 				 snippets = SnippetType.CAMELCASE, monochrome = true, dryRun = false, strict = false,
 				 glue = {""})
 				 

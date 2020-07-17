@@ -16,6 +16,7 @@ public class ShoestockMyStorePage {
     public void navigate(String url) {
     	driver.get(url);
     }
+    //É utilizado para esperar um elemento na tela até que o mesmo esteja visível
     public void waitPresenceElement(String element, String type) {
     	WebDriverWait wait = new WebDriverWait(driver, 12);
     	if(type.equals("id")) {
@@ -40,10 +41,12 @@ public class ShoestockMyStorePage {
 		waitPresenceElement(element, "id");
 		driver.findElement(By.id(element)).sendKeys(produto);
 	}
+	//Para ter mais flexibilidade este método permite passar uma string fragmentada, permitindo a validação de uma parte dela
 	public void textValidator(String text, String element, int ini, int fim) {
 		waitPresenceElement(element, "css");
 		String titulo = driver.findElement(By.cssSelector(element)).getText();
-		assertEquals(text, titulo.substring(ini, fim));
+		assertEquals(text, titulo.substring(ini, fim).toLowerCase());
 		
 	}
+	
 }
