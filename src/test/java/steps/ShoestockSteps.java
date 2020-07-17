@@ -21,17 +21,17 @@ public class ShoestockSteps {
     WebDriver driver;
     ShoestockMyStorePage storePage;
     String produto;
-    
+    //Todas as configurações antes da execução
 	@Before
 	public void beforeMethod() {
 		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
 		driver = driverManager.getDriver();
 		storePage = new ShoestockMyStorePage(driver);
 	}
-
+	//Todas as configurações após a execução
 	@After
 	public void afterMethod() {
-		//driverManager.quitDriver();
+		driverManager.quitDriver();
 	}
 	@Given("^que acessear o site https://www\\.shoestock\\.com\\.br/$")
 	public void queAcessearOSiteHttpsWwwShoestockComBr() throws Throwable {
